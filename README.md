@@ -2,6 +2,6 @@
 
 My AI Prompts for Cursor Rules, Cline, Windsurf and Github Copilot.
 
-| AI Agent |  |
+| AI Agent | Docs |
 |----------|----------|
-| Windsurf | Add a .windsurfrules file into the project root. Check [Windsurf Getting Started Guide](https://docs.windsurf.com/windsurf/getting-started). |
+| Windsurf | [Windsurf Getting Started Guide](https://docs.windsurf.com/windsurf/getting-started). |
