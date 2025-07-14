@@ -12,12 +12,17 @@ Check latest commit messages and commit descriptions between latest version and 
 - Use emojis to highlight the type of changes made and in titles.
 - Prepare historical a change log with `📝 Detailed Changelog` title.
   - Group changes by category semantically.
+  - Ignore duplicated or similar changes.
   - Each change should have a commit hash (without any notation or backtick), description, and the type of change (e.g., feature, fix, refactor).
   - Must be in one sentence per change.
 - Add list of affected branch names with `🌿 Affected Branches` title.
   - Exclude dev and main branches.
 - Add list of affected app and project names (use project.json project name field) with `📁 Affected Projects` title.
 - Add full change log link to the end in `**Full Changelog**: https://github.com/ngeenx/ngeen-platform/compare/v1.2.3...v1.2.4` format.
+
+## Git Submodules
+
+- If there are any git submodules, add them to the release note with `📁 Affected Submodules` title.
 
 ## Output Rules
 
