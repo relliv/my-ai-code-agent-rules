@@ -16,7 +16,7 @@ Check latest commit messages and commit descriptions between latest version and 
   - Each change should have a commit hash (without any notation or backtick), description, and the type of change (e.g., feature, fix, refactor).
   - Must be in one sentence per change.
 - Add list of affected branch names with `🌿 Affected Branches` title.
-  - Exclude dev and main branches.
+  - Each branch should have a link to the branch in the repository (e.g., https://github.com/{user|org}/{repo_name}/tree/{branch_name}).
 - Add list of affected app and project names (use project.json project name field) with `📁 Affected Projects` title.
 - Add full change log link to the end in `**Full Changelog**: https://github.com/ngeenx/ngeen-platform/compare/v1.2.3...v1.2.4` format.
 
@@ -28,3 +28,8 @@ Check latest commit messages and commit descriptions between latest version and 
 
 - Output must be in markdown format and save in `./dist/release-notes/release-v1.2.4.md` file (with latest version number).
 - If the file already exists, overwrite it.
+
+## Create New Release by Github CLI
+
+- Use `gh release create` command to create a release.
+- Command: `gh release create v1.2.4 -F ./dist/release-notes/release-v1.2.4.md`
