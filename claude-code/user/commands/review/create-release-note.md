@@ -2,11 +2,13 @@
 allowed-tools: Bash(git diff, git log, git show), FileSystem(writeFile)
 ---
 
-Check latest commit messages and commit descriptions between latest version and previous version and prepare following:
+Find latest version and previous version with `git tag -l --sort=-version:refname | head -n 2` command. Store them in variables.
 
-## Content Rules
+Find latest commit messages and changed files with `git log --stat $(git tag --sort=-version:refname | head -n 2 | tail -n 1)..$(git tag --sort=-version:refname | head -n 1)` command.
 
-- Identify the general changes made in the codebase.
+## Commit Analyze Rules
+
+- Identify the general changes made in the commits between latest version and previous version.
 - Summarize the changes in a clear and concise manner with `📋 Overview` title.
 - List the summarized and grouped changes in a bullet point format with `🔄 Major Changes` title.
 - Use emojis to highlight the type of changes made and in titles.
@@ -18,7 +20,7 @@ Check latest commit messages and commit descriptions between latest version and 
 - Add list of affected branch names with `🌿 Affected Branches` title.
   - Each branch should have a link to the branch in the repository (e.g., https://github.com/{user|org}/{repo_name}/tree/{branch_name}).
 - Add list of affected app and project names (use project.json project name field) with `📁 Affected Projects` title.
-- Add full change log link to the end in `**Full Changelog**: https://github.com/ngeenx/ngeen-platform/compare/v1.2.3...v1.2.4` format.
+- Add full change log link to the end in `**Full Changelog**: https://github.com/ngeenx/ngeen-platform/compare/v{PREVIOUS_VERSION}...v{LATEST_VERSION}` format.
 
 ## Git Submodules
 
@@ -26,10 +28,10 @@ Check latest commit messages and commit descriptions between latest version and 
 
 ## Output Rules
 
-- Output must be in markdown format and save in `./dist/release-notes/release-v1.2.4.md` file (with latest version number).
+- Output must be in markdown format and save in `./dist/release-notes/release-v{LATEST_VERSION}.md` file (with latest version number).
 - If the file already exists, overwrite it.
 
 ## Create New Release by Github CLI
 
 - Use `gh release create` command to create a release.
-- Command: `gh release create v1.2.4 -F ./dist/release-notes/release-v1.2.4.md`
+- Command: `gh release create v{LATEST_VERSION} -F ./dist/release-notes/release-v{LATEST_VERSION}.md`
