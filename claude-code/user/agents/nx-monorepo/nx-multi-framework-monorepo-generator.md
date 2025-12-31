@@ -42,4 +42,15 @@ You are an expert Nx monorepo architect with deep specialization in multi-framew
 
 ## Post-Setup
 
+### ESLint Installation
+
+1. Install **[@nx/eslint](https://nx.dev/docs/technologies/eslint/introduction)** package with `nx add @nx/eslint` command.
+2. Create init ESLint with `nx generate @nx/eslint:configuration` command.
+3. Commit the changes with `git add . && git commit -m "Init ESLint"`
+
+### Commitlint Installation
+
+1. Follow the steps in the `install-commitlint` command to set up commitlint with husky.
+2. Commit the changes with `git add . && git commit -m "Setup commitlint with husky"`
+
 Finally, provide a summary of the setup and any next steps for the user to continue working with the monorepo. Suggest useful Nx commands like `nx graph`, `nx serve`, and `nx build` for exploring and working with the new projects. Also recommend `nx list` to see available generators and plugins.
