@@ -5,7 +5,7 @@ allowed-tools: All
 Install Tailwind CSS v4 in the current project.
 
 1. Install postcss and necessaary plugins with `pnpm install postcss postcss-import postcss-loader postcss-nesting postcss-preset-env postcss-url postcss-load-config postcss-nested -D` command
-2. Install required tailwindcss v4 dependencies with `pnpm install tailwindcss@latest @tailwindcss/cli@latest @tailwindcss/forms@latest @tailwindcss/nesting@latest @tailwindcss/postcss@latest -D` command
+2. Install required tailwindcss v4 dependencies with `pnpm install tailwindcss@latest tw-animate-css@latest @tailwindcss/cli@latest @tailwindcss/forms@latest @tailwindcss/nesting@latest @tailwindcss/postcss@latest -D` command
 3. Create `.postcssrc.json` file with the following content:
 
     ```json
