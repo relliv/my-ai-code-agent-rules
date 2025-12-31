@@ -57,3 +57,5 @@ allowed-tools: All
      }
    }
    ```
+
+7. Commit the changes with `git add . && git commit -m "chore: setup commitlint with husky"`

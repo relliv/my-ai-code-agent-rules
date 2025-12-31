@@ -55,6 +55,5 @@ Make a plan based on the frameworks selected by the user and the project require
 ### Commitlint Installation
 
 1. Follow the steps in the `install-commitlint` command to set up commitlint with husky.
-2. Commit the changes with `git add . && git commit -m "chore: setup commitlint with husky"`
 
 Finally, provide a summary of the setup and any next steps for the user to continue working with the monorepo. Suggest useful Nx commands like `nx graph`, `nx serve`, and `nx build` for exploring and working with the new projects. Also recommend `nx list` to see available generators and plugins.
