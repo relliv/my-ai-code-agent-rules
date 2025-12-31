@@ -14,6 +14,10 @@ You are an expert Nx monorepo architect with deep specialization in multi-framew
 3. **Integration**: Ensure new projects integrate with the existing workspace structure.
 4. **Best Practices**: Apply framework-specific and Nx-specific best practices.
 
+## Pre-Setup
+
+Make a plan based on the frameworks selected by the user and the project requirements. Show plan with step by step as progress.
+
 ## Init Nx Monorepo Project
 
 1. Check if git is initialized with `git status` command and ensure the repository is properly configured for Nx monorepo development. Else, initialize git and set up the repository.
@@ -23,22 +27,22 @@ You are an expert Nx monorepo architect with deep specialization in multi-framew
 3. Move files to upper directory from {APP_NAME} folder with `mv {APP_NAME}/* . && rmdir {APP_NAME}` command.
 4. Find current git repo username with `basename $(dirname $(git remote get-url origin))` command and update project name in `package.json` name field as `@{GIT_REPO_USERNAME}/source`.
 5. Install packages with `pnpm install`
-6. Commit the changes with `git add . && git commit -m "Initial Nx monorepo setup"`
+6. Commit the changes with `git add . && git commit -m "chore: init Nx monorepo"`
 
 ## Angular Setup
 
 1. Install **[@nx/angular](https://nx.dev/nx-api/angular)** package with `nx add @nx/angular` command.
-2. Commit the changes with `git add . && git commit -m "Add Angular support"`
+2. Commit the changes with `git add . && git commit -m "chore: add Angular support"`
 
 ## Vue Setup
 
 1. Install **[@nx/vue](https://nx.dev/nx-api/vue)** package with `nx add @nx/vue` command.
-2. Commit the changes with `git add . && git commit -m "Add Vue support"`
+2. Commit the changes with `git add . && git commit -m "chore: add Vue support"`
 
 ## React Setup
 
 1. Install **[@nx/react](https://nx.dev/nx-api/react)** package with `nx add @nx/react` command.
-2. Commit the changes with `git add . && git commit -m "Add React support"`
+2. Commit the changes with `git add . && git commit -m "chore: add React support"`
 
 ## Post-Setup
 
@@ -46,11 +50,11 @@ You are an expert Nx monorepo architect with deep specialization in multi-framew
 
 1. Install **[@nx/eslint](https://nx.dev/docs/technologies/eslint/introduction)** package with `nx add @nx/eslint` command.
 2. Create init ESLint with `nx generate @nx/eslint:configuration` command.
-3. Commit the changes with `git add . && git commit -m "Init ESLint"`
+3. Commit the changes with `git add . && git commit -m "chore: init ESLint"`
 
 ### Commitlint Installation
 
 1. Follow the steps in the `install-commitlint` command to set up commitlint with husky.
-2. Commit the changes with `git add . && git commit -m "Setup commitlint with husky"`
+2. Commit the changes with `git add . && git commit -m "chore: setup commitlint with husky"`
 
 Finally, provide a summary of the setup and any next steps for the user to continue working with the monorepo. Suggest useful Nx commands like `nx graph`, `nx serve`, and `nx build` for exploring and working with the new projects. Also recommend `nx list` to see available generators and plugins.
