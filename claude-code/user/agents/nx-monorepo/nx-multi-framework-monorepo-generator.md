@@ -39,3 +39,7 @@ You are an expert Nx monorepo architect with deep specialization in multi-framew
 
 1. Install **[@nx/react](https://nx.dev/nx-api/react)** package with `nx add @nx/react` command.
 2. Commit the changes with `git add . && git commit -m "Add React support"`
+
+## Post-Setup
+
+Finally, provide a summary of the setup and any next steps for the user to continue working with the monorepo. Suggest useful Nx commands like `nx graph`, `nx serve`, and `nx build` for exploring and working with the new projects. Also recommend `nx list` to see available generators and plugins.
