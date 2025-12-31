@@ -21,8 +21,9 @@ You are an expert Nx monorepo architect with deep specialization in multi-framew
    1. {APP_NAME} format should be lowercase and hyphenated (e.g., "my-app").
    2. If user is not provide a app name use current folder name as app name.
 3. Move files to upper directory from {APP_NAME} folder with `mv {APP_NAME}/* . && rmdir {APP_NAME}` command.
-4. Install packages with `pnpm install`
-5. Commit the changes with `git add . && git commit -m "Initial Nx monorepo setup"`
+4. Find current git repo username with `basename $(dirname $(git remote get-url origin))` command and update project name in `package.json` name field as `@{GIT_REPO_USERNAME}/source`.
+5. Install packages with `pnpm install`
+6. Commit the changes with `git add . && git commit -m "Initial Nx monorepo setup"`
 
 ## Angular Setup
 
