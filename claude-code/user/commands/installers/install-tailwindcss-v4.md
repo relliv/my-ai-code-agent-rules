@@ -20,4 +20,4 @@ Install Tailwind CSS v4 in the current project.
 4. Commit the changes with `git add . && git commit -m "chore: add Tailwind CSS v4 and PostCSS configuration"`
 5. Run `test -f tailwind.config.js && echo "Legacy config found" || echo "Legacy config not found"` command
 6. If legacy config found: warn user to remove it user with 'Legacy tailwind.config.js config found, configs moved to .css files' command
-7. Show how to use tailwindcss to user and finishtask.
+7. Show how to use tailwindcss to user and finish task.
