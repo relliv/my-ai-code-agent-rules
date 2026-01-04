@@ -2,7 +2,7 @@
 allowed-tools: All
 ---
 
-# Shash - Smart Commit Helper
+# Semantic Commit Generator
 
 Analyze the staged changes and create a conventional commit. Read `commitlint.config.mjs` file for commit rules if exists.
 
