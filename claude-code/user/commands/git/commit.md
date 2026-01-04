@@ -45,6 +45,8 @@ Analyze the staged changes and create a conventional commit. Read `commitlint.co
 7. Append current running model as co-author with `Co-Authored-By: MODEL_NAME MODEL_VERSION <noreply@anthropic.com>` to the commit message footer.
 
 8. Present the suggested commit message and ask for confirmation
+   1. If bypass permissions is on, ignore this step.
+   2. If bypass permissions is off, ask for confirmation.
 
 9. If confirmed, run `git commit -m "<message>"`
 
