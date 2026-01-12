@@ -2,7 +2,7 @@
 allowed-tools: All
 ---
 
-1. Install required packages with `pnpm install @commitlint/cli @commitlint/config-conventional @commitlint/config-nx-scopes husky -D`
+1. Install required packages with `pnpm install @commitlint/cli @commitlint/config-conventional @commitlint/config-nx-scopes husky -D` (if project is not usinf nx monorepo, skip `@commitlint/config-nx-scopes`)
 2. Install husky: `npx husky install` command
 3. Create `.husky` folder with `mkdir -p .husky` command
 4. Create commit-msg hook with `npx husky add .husky/commit-msg 'npx --no -- commitlint --edit ${1}'` command
@@ -58,4 +58,53 @@ allowed-tools: All
    }
    ```
 
-7. Commit the changes with `git add . && git commit -m "chore: setup commitlint with husky"`
+7. Create `prepare-commit-msg` hook in `.husky` folder and add following content:
+
+   ```bash
+   #!/usr/bin/env sh
+
+   # Strip leading and trailing backticks from commit message
+   # Handles both single (`) and triple (```) backticks
+   # Compatible with: macOS (BSD), Linux (GNU), Windows (Git Bash)
+
+   COMMIT_MSG_FILE=$1
+
+   if [ -f "$COMMIT_MSG_FILE" ]; then
+   # Create temp file (POSIX compatible)
+   TEMP_FILE="${COMMIT_MSG_FILE}.tmp"
+
+   # Process the commit message using POSIX awk
+   awk '
+      NR == 1 {
+         # Remove leading triple backticks with optional language identifier
+         gsub(/^```[a-zA-Z]*$/, "")
+         gsub(/^```[a-zA-Z]* /, "")
+         gsub(/^```/, "")
+         # Remove leading single backtick
+         gsub(/^`/, "")
+      }
+      { lines[NR] = $0; count = NR }
+      END {
+         # Remove trailing backticks from last non-empty line
+         for (i = count; i >= 1; i--) {
+         if (lines[i] !~ /^[[:space:]]*$/) {
+            gsub(/```$/, "", lines[i])
+            gsub(/`$/, "", lines[i])
+            break
+         }
+         }
+         # Print lines, skipping empty first/last lines caused by backtick removal
+         start = 1
+         end = count
+         while (start <= count && lines[start] ~ /^[[:space:]]*$/) start++
+         while (end >= start && lines[end] ~ /^[[:space:]]*$/) end--
+         for (i = start; i <= end; i++) print lines[i]
+      }
+   ' "$COMMIT_MSG_FILE" > "$TEMP_FILE"
+
+   # Replace original with processed content
+   mv "$TEMP_FILE" "$COMMIT_MSG_FILE"
+   fi
+   ```
+
+8. Commit the changes with `git add . && git commit -m "chore: setup commitlint with husky"`
