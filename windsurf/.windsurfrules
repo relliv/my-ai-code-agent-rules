@@ -1,3 +1,0 @@
-# Styling
-
-- Never use inline styles. Use CSS classes instead and .scss files for styling.
